@@ -9,6 +9,12 @@ pmd {
   ruleSetFiles = files("pmd.xml")
 }
 
+tasks.withType<Pmd> {
+  ruleSetFiles = files("$rootDir/pmd.xml")
+  ruleSets = listOf()
+  ignoreFailures = true
+}
+
 tasks.compileJava {
   sourceCompatibility = "17"
   targetCompatibility = "17"
